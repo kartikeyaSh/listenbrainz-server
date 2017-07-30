@@ -104,8 +104,10 @@ def _register_blueprints(app):
     from listenbrainz.webserver.views.api import api_bp
     from listenbrainz.webserver.views.api_compat import api_bp as api_bp_compat
     from listenbrainz.webserver.views.user import user_bp
+    from listenbrainz.webserver.views.spotify import spotify_bp
     app.register_blueprint(index_bp)
     app.register_blueprint(login_bp, url_prefix='/login')
     app.register_blueprint(user_bp, url_prefix='/user')
     app.register_blueprint(api_bp, url_prefix=API_PREFIX)
+    app.register_blueprint(spotify_bp, url_prefix='/spotify')
     app.register_blueprint(api_bp_compat)

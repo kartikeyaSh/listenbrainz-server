@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Spotify import setup" - ListenBrainz{% endblock %}
+
+{% block content %}
+  <h2 class="page-title">Spotify import setup</h2>
+  {% if current_user.is_authenticated() and current_user == user %}
+
+      <div class="well">
+        <form>
+            <p>
+             To setup ListenBrainz to record you Spotify listen history, you'll need to authorize ListenBrainz to read your recently played tracks:
+            </p>
+          <input type="submit" value="Authorize Listenbrainz">
+        </form>
+      </div>
+
+  {% endif %}
+{% endblock %}
